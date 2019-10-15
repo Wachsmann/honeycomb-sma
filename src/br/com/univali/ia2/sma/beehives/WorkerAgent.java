@@ -5,12 +5,17 @@
  */
 package br.com.univali.ia2.sma.beehives;
 
+import br.com.univali.ia2.sma.beehives.workerBehaviour.Clean;
 import jade.core.Agent;
 
 /**
  *
  * @author 6182593
  */
-public class WorkerAgent extends Agent{
-    
+public class WorkerAgent extends Agent {
+
+    protected void setup() {
+        System.out.println("WorkerAgent");
+        addBehaviour(new Clean(this, 1000, 5000));
+    }
 }

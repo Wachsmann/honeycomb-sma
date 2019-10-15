@@ -20,8 +20,8 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         String[] param = new String[2];
-        //param[0] = "-container";
-        //param[1] = "Dalbosco USA:javaapplication1.AgenteAlarmado2()";
+        param[0] = "-gui";
+        param[1] = "Léo:br.com.univali.ia2.sma.beehives.WorkerAgent()";        
         
         Boot.main(param);
     }
