@@ -23,8 +23,7 @@ Startup de abelhas para procriação e início do ambiente<br>
   <li>mate()</li>
   <li>layEggs()</li>
 </ul>
-<br>
-<h3>Worker</h3>
+<p>Worker</p>
 <ul>
   <li>clean()</li>
   <li>build()</li>
