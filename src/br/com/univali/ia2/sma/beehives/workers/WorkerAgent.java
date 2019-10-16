@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.univali.ia2.sma.beehives;
+package br.com.univali.ia2.sma.beehives.workers;
 
-import br.com.univali.ia2.sma.beehives.workerBehaviour.Clean;
+import br.com.univali.ia2.sma.beehives.workers.behaviours.Clean;
 import jade.core.Agent;
 
 /**

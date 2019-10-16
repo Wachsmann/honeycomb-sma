@@ -5,12 +5,15 @@
  */
 package br.com.univali.ia2.sma.beehives;
 
-import jade.core.Agent;
+import br.com.univali.ia2.sma.predators.birds.BirdAgent;
+import java.util.ArrayList;
 
 /**
  *
- * @author 6182593
+ * @author wachsmann
  */
-public class QueenAgent extends Agent{
+public class RootAmbient {
+    protected RootBeehive rootHive;
+    protected ArrayList<BirdAgent> predators;
     
 }

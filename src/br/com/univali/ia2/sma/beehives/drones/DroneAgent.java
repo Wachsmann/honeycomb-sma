@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.univali.ia2.sma.predators;
+package br.com.univali.ia2.sma.beehives.drones;
+
+import jade.core.Agent;
 
 /**
  *
  * @author 6182593
  */
-public class BirdAgent  {
+public class DroneAgent extends Agent{
     
 }

@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.univali.ia2.sma.beehives;
-
-import jade.core.Agent;
+package br.com.univali.ia2.sma.beehives.drones.behaviours;
 
 /**
  *
- * @author 6182593
+ * @author wachsmann
  */
-public class DroneAgent extends Agent{
-    
+public class Mate {
+   
 }
