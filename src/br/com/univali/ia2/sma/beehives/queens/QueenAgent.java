@@ -5,30 +5,43 @@
  */
 package br.com.univali.ia2.sma.beehives.queens;
 
-import br.com.univali.ia2.sma.beehives.queens.behaviours.Mate;
+import br.com.univali.ia2.sma.beehives.drones.DroneAgent;
+import br.com.univali.ia2.sma.beehives.queens.behaviours.Mating;
 import br.com.univali.ia2.sma.beehives.queens.behaviours.Reproduce;
 import br.com.univali.ia2.sma.beehives.queens.behaviours.SeekDrone;
-import br.com.univali.ia2.sma.beehives.queens.behaviours.layEggs;
+import br.com.univali.ia2.sma.beehives.queens.behaviours.UpdateDroneList;
 import jade.core.Agent;
-import java.util.Date;
+import static jade.core.Agent.AP_MIN;
+import static jade.core.Agent.D_ACTIVE;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.TickerBehaviour;
+import java.util.Vector;
 
 /**
  *
  * @author 6182593
  */
 public class QueenAgent extends Agent{
+
+
+    private Vector droneAgents = new Vector();
+    
+    //TODO: create mechanism to randomize time for seeking drone and controlling communication
     @Override
     protected void setup() {
         System.out.println("QueenAgent");
-        Reproduce reproduce = new Reproduce(this);
-        //TODO: create mechanism to randomize time for seeking drone and controlling communication
-        reproduce.addSubBehaviour(new SeekDrone(this, AP_MIN, D_ACTIVE));
+        addBehaviour(new UpdateDroneList(this, 2000));
+        addBehaviour(new SeekDrone(this, 10000));
+        addBehaviour(new Mating(this));
         
-        reproduce.addSubBehaviour(new Mate());
-        //TODO: create mechanism to randomize time for laying eggs
-        reproduce.addSubBehaviour(new layEggs(this, new Date()));
-        //Starts reproduce behaviour for queen
-        addBehaviour(reproduce);
-
+    }
+    public void clearDroneList() {
+        this.droneAgents.clear();
+    }
+    public void addDroneInList(Object droneDF){
+        this.droneAgents.add(droneDF);
+    }
+    public Vector getDroneDFList(){
+        return droneAgents;
     }
 }

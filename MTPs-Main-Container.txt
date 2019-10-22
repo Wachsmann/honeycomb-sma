@@ -1,1 +1,1 @@
-http://LAPTOP-FG624VD0:7778/acc
+http://kafka:7778/acc

@@ -21,8 +21,16 @@ public class Main {
         // TODO code application logic here
         String[] param = new String[2];
         param[0] = "-gui";
+        /*
         param[1] = "Léo:br.com.univali.ia2.sma.beehives.WorkerAgent()";        
-        
+        */
+        param[1] = "drone1:br.com.univali.ia2.sma.beehives.drones.DroneAgent();"+
+                   "drone2:br.com.univali.ia2.sma.beehives.drones.DroneAgent();"+
+                   "queen:br.com.univali.ia2.sma.beehives.queens.QueenAgent();"+
+                   "worker:br.com.univali.ia2.sma.beehives.workers.WorkerAgent();"+
+
+                "";        
+
         Boot.main(param);
     }
     
