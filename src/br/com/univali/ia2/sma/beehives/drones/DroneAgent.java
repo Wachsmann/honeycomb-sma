@@ -5,7 +5,6 @@
  */
 package br.com.univali.ia2.sma.beehives.drones;
 
-import br.com.univali.ia2.sma.beehives.drones.behaviours.InvitationReceiver;
 import br.com.univali.ia2.sma.beehives.drones.behaviours.ServeQueen;
 import br.com.univali.ia2.sma.utils.Constants;
 import com.sun.corba.se.impl.orbutil.closure.Constant;

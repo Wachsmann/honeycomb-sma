@@ -46,7 +46,7 @@ public class UpdateDroneList extends TickerBehaviour{
                 queenAgent.addDroneInList(result[i].getName());
             }
             System.out.println("Drones list updated!");
-            queenAgent.addBehaviour(new SeekDrone(queenAgent, 2000));
+            queenAgent.addBehaviour(new SeekDrone(queenAgent));
         }
         catch (FIPAException fe) {
             System.out.println(fe.getACLMessage());
