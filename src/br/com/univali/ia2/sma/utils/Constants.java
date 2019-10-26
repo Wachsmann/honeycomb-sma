@@ -20,6 +20,11 @@ public class Constants {
     public static final String MATE_PROPOSAL = "Let's make some eggs!";
     public static final String MATE_ACCEPT_PROPOSAL = "Mating!";
     public static final String MATING_DONE = "Mating done!";
+    public static String DF_WORKER = "DF_WORKER";
+    public static String DF_BIRD = "DF_BIRD";
+    public static String BEE_ATTACK_WARNING = "There are birds attacking me!";
+    public static String BIRD_ATTACK = "I will kill you bee!";
+    public static String BEE_ATTACK = "I will kill you bird!";
 
     
 /**
@@ -51,4 +56,7 @@ public static int randInt(int min, int max) {
     
     return randomNum;
 }
+    public int drawnNumber(int minimum_limit, int maximum_limit) {
+        return (int) (java.lang.Math.random() * maximum_limit + minimum_limit);
+    }
 }

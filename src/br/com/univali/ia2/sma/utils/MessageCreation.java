@@ -15,18 +15,19 @@ import jade.lang.acl.ACLMessage;
  * @author wachsmann
  */
 public class MessageCreation {
+
     // ----------------- Messages Creation Methods -----------------------------
-        /*
+    /*
 	ACLMessage newMsg(Agent agent, int perf, ContentElement content)
 	{
 		return newMsg(agent, perf, content, null) ;
 	}
-        */
-	ACLMessage newMsg(Agent agent, int perf, String content)
-	{
-		return newMsg( agent,perf, content, null) ;
-	}
-        /*  
+     */
+    ACLMessage newMsg(Agent agent, int perf, String content) {
+        return newMsg(agent, perf, content, null);
+    }
+
+    /*  
 	ACLMessage newMsg(Agent agent, int perf, ContentElement ce, AID dest)
 	{
 		ACLMessage msg = newMsg(agent,perf);
@@ -42,36 +43,34 @@ public class MessageCreation {
 		}
 		return msg;
 	}
-        */
-	ACLMessage newMsg(Agent agent, int perf, String content, AID dest)
-	{
-		ACLMessage msg = newMsg(agent,perf);
-		if (dest != null) msg.addReceiver( dest );
-		msg.setContent( content );
-		return msg;
-	}
+     */
+    ACLMessage newMsg(Agent agent, int perf, String content, AID dest) {
+        ACLMessage msg = newMsg(agent, perf);
+        if (dest != null) {
+            msg.addReceiver(dest);
+        }
+        msg.setContent(content);
+        return msg;
+    }
 
-	ACLMessage newMsg(Agent agent, int perf)
-	{
-		ACLMessage msg = new ACLMessage(perf);
-		msg.setConversationId( genCID(agent) );
-		return msg;
-	}
+    ACLMessage newMsg(Agent agent, int perf) {
+        ACLMessage msg = new ACLMessage(perf);
+        msg.setConversationId(genCID(agent));
+        return msg;
+    }
 
 // -------------------------------------------------------------------------
 //     Generating unique ConversationIDs
 // -------------------------------------------------------------------------
-	
-	protected static int cidCnt = 0;
-   String cidBase ;
-   
-   String genCID(Agent agent) 
-   { 
-      if (cidBase==null) {
-         cidBase = agent.getLocalName() + hashCode() +
-                      System.currentTimeMillis()%10000 + "_";
-      }
-      return  cidBase + (cidCnt++); 
-   }
+    protected static int cidCnt = 0;
+    String cidBase;
+
+    String genCID(Agent agent) {
+        if (cidBase == null) {
+            cidBase = agent.getLocalName() + hashCode()
+                    + System.currentTimeMillis() % 10000 + "_";
+        }
+        return cidBase + (cidCnt++);
+    }
 
 }
