@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.univali.ia2.sma.beehives.queens.behaviours;
+package br.com.univali.ia2.sma.beehives.workers.behaviours;
 
+import br.com.univali.ia2.sma.predators.birds.behaviours.*;
 import br.com.univali.ia2.sma.beehives.queens.QueenAgent;
+import br.com.univali.ia2.sma.beehives.workers.WorkerAgent;
+import br.com.univali.ia2.sma.predators.birds.BirdAgent;
 import br.com.univali.ia2.sma.utils.Constants;
 import com.sun.corba.se.impl.orbutil.closure.Constant;
 import jade.core.Agent;
@@ -20,14 +23,14 @@ import java.util.Vector;
  *
  * @author wachsmann
  */
-public class UpdateDroneList extends TickerBehaviour {
+public class UpdateBirdList extends TickerBehaviour {
     // The list of known seller agents
 
-    QueenAgent queenAgent;
+    WorkerAgent workerAgent;
 
-    public UpdateDroneList(QueenAgent a, long period) {
+    public UpdateBirdList(WorkerAgent a, long period) {
         super(a, period);
-        this.queenAgent = a;
+        this.workerAgent = a;
 
     }
 
@@ -37,17 +40,24 @@ public class UpdateDroneList extends TickerBehaviour {
         // Update the list of seller agents
         DFAgentDescription template = new DFAgentDescription();
         ServiceDescription sd = new ServiceDescription();
-        sd.setType(Constants.DF_DRONE);
+        sd.setType(Constants.DF_BIRD);
         template.addServices(sd);
         try {
+            
             DFAgentDescription[] result = DFService.search(myAgent, template);
-            queenAgent.clearDroneList();
+            
+            workerAgent.clearBirdList();
+            
             for (int i = 0; i < result.length; ++i) {
+                
                 System.out.println("Adding agent => "+ result[i].getName());
-                queenAgent.addDroneInList(result[i].getName());
+                
+                workerAgent.addBirdInList(result[i].getName());
+                
             }
-            System.out.println("Drones list updated!");
-            queenAgent.addBehaviour(new SeekDrone(queenAgent, 2000));
+            
+            System.out.println("Bird list updated!");
+            //birdAgent.addBehaviour(new SeekDrone(birdAgent, 2000));
         } catch (FIPAException fe) {
             System.out.println(fe.getACLMessage());
         }

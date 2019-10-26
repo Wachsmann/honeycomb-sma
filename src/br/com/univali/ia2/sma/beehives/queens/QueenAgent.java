@@ -31,8 +31,8 @@ public class QueenAgent extends Agent{
     protected void setup() {
         System.out.println("QueenAgent");
         addBehaviour(new UpdateDroneList(this, 2000));
-        addBehaviour(new SeekDrone(this, 10000));
-        addBehaviour(new Mating(this));
+        //addBehaviour(new SeekDrone(this, 10000));
+        //addBehaviour(new Mating(this));
         
     }
     public void clearDroneList() {

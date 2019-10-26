@@ -5,32 +5,40 @@
  */
 package br.com.univali.ia2.sma.beehives.workers.behaviours;
 
-import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
-import jade.core.behaviours.TickerBehaviour;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import br.com.univali.ia2.sma.beehives.drones.behaviours.*;
+import br.com.univali.ia2.sma.beehives.drones.DroneAgent;
+import br.com.univali.ia2.sma.beehives.workers.WorkerAgent;
+import br.com.univali.ia2.sma.predators.birds.behaviours.AttackWorker;
+import br.com.univali.ia2.sma.utils.Constants;
+import jade.core.AID;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.SimpleBehaviour;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.UnreadableException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author leoda
+ * @author wachsmann
  */
-public class Clean extends TickerBehaviour {
+public class Clean extends SimpleBehaviour {
 
-    long cleaning_time;
+    WorkerAgent worker;
 
-    public Clean(Agent a, long period, long cleaning_time) {
-        super(a, period);
-        this.cleaning_time = (System.currentTimeMillis() + cleaning_time);
+    public Clean(WorkerAgent worker) {
+        this.worker = worker;
+
     }
 
     @Override
-    protected void onTick() {
-        if (System.currentTimeMillis() > this.cleaning_time) {
-            System.out.println("Agent: " + myAgent.getLocalName() + " | Behaviour: " + getBehaviourName() + " Finish!");
-            stop();
-        } else {
-            System.out.println("Agent: " + myAgent.getLocalName() + " | Behaviour: " + getBehaviourName() + " cleaning up!");
-        }
+    public void action() {
+        block(2000);
+        System.out.println("Agent: " + myAgent.getLocalName() + " | Behaviour: " + getBehaviourName() + " cleaning up!");
+    }
+
+    @Override
+    public boolean done() {
+        return (!this.worker.state().equalsIgnoreCase("clean"));
     }
 }
