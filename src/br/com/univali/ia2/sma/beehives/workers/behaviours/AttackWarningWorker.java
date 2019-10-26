@@ -46,10 +46,7 @@ public class AttackWarningWorker extends SimpleBehaviour {
             DFAgentDescription[] result = DFService.search(myAgent, template);
 
             for (int i = 0; i < result.length; ++i) {
-                System.out.println(result[i].getName().getName());
-                System.out.println(this.workerAgent.getName());
-
-                System.out.println("Send message attack warning => " + result[i].getName());
+                //System.out.println("Send message attack warning => " + result[i].getName());
 
                 block(seekTime);
 

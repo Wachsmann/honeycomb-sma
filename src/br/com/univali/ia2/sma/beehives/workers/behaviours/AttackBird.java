@@ -47,7 +47,8 @@ public class AttackBird extends Behaviour {
     @Override
     public void action() {
 
-        System.out.println("Attacking birds..");
+        //System.out.println("Attacking birds..");
+        System.out.println("Agent: " + workerAgent.getLocalName() + " | Behaviour: Bee attacking the birds!");
 
         AID myID = workerAgent.getAID();
 

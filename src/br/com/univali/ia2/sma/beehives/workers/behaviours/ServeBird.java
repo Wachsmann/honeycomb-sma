@@ -39,13 +39,12 @@ public class ServeBird extends CyclicBehaviour {
             if (content.equalsIgnoreCase(Constants.BIRD_ATTACK)) {
                 worker.setState("attack");
 
-                System.out.println(worker.getName() + ": Message Received... ATTACK");
-
+                //System.out.println(worker.getName() + ": Message Received... ATTACK");
                 worker.addBehaviour(new AttackWarningWorker(worker));
 
             } else if (content.equalsIgnoreCase(Constants.BEE_ATTACK_WARNING)) {
-
-                System.out.println(worker.getName() + ": Message Received... ATTACK_WARNING");
+                System.out.println("Agent: " + worker.getLocalName() + " | Behaviour: Spot all the bees on the attack!");
+                // System.out.println(worker.getName() + ": Message Received... ATTACK_WARNING");
 
                 worker.addBehaviour(new AttackBird(worker));
 

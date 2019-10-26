@@ -50,13 +50,13 @@ public class UpdateBirdList extends TickerBehaviour {
             
             for (int i = 0; i < result.length; ++i) {
                 
-                System.out.println("Adding agent => "+ result[i].getName());
+                //System.out.println("Adding agent => "+ result[i].getName());
                 
                 workerAgent.addBirdInList(result[i].getName());
                 
             }
             
-            System.out.println("Bird list updated!");
+            //System.out.println("Bird list updated!");
             //birdAgent.addBehaviour(new SeekDrone(birdAgent, 2000));
         } catch (FIPAException fe) {
             System.out.println(fe.getACLMessage());

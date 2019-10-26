@@ -46,7 +46,7 @@ public class AttackWorker extends TickerBehaviour {
 
     @Override
     public void onTick() {
-        System.out.println("Attacking workers..");
+        System.out.println("Agent: " + birdAgent.getLocalName() + "   | Behaviour: Bird attacking the bees!");
 
         block(seekTime);
         AID myID = birdAgent.getAID();

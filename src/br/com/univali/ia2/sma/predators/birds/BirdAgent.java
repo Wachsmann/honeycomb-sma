@@ -88,12 +88,12 @@ public class BirdAgent extends Agent {
         this.life -= 25;
 
         if (this.life <= 0) {
-            System.out.println("Bee " + getAID().getName() + " died.");
+            System.out.println("Agent: " + getAID().getLocalName() + "   | Behaviour: Gets attack and died.");
+
             doDelete();
 
         } else {
-            System.out.println("Bee life: " + this.life);
-
+            System.out.println("Agent: " + getAID().getLocalName() + "   | Behaviour: Gets attack and your life goes to " + this.life + "%");
         }
     }
 }

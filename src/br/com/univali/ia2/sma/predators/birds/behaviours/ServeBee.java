@@ -39,7 +39,7 @@ public class ServeBee extends CyclicBehaviour {
             String content = msg.getContent();
 
             if (content.equalsIgnoreCase(Constants.BEE_ATTACK)) {
-                System.out.println(birdAgent.getName() + ": Message Received... BEE_ATTACK");
+                //System.out.println(birdAgent.getName() + ": Message Received... BEE_ATTACK");
                 birdAgent.removeLife();
                 
                 block(2000);
