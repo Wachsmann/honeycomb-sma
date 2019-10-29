@@ -8,9 +8,6 @@
   <li>Ciclo de vida</li>
 </ul>
 
-
-Thread para geração de flores<br>
-Thread para geração de predadores<br>
 Startup de abelhas para procriação e início do ambiente<br>
 
 <h3>Bee</h3>
@@ -37,8 +34,6 @@ Startup de abelhas para procriação e início do ambiente<br>
 </ul>
 <br>
 <h3>Static</h3>
-<ul>
-  <li>Flowers</li>
-</ul>
+
 
 
